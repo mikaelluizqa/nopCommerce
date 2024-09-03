@@ -1,0 +1,15 @@
+Feature: User Registration
+
+  Scenario: Successful registration
+    Given I am on the registration page
+    When I fill in the registration form with valid details
+    And I submit the form
+    Then I should see a "Registration completed" message
+
+Feature: User Registration Error Messages
+
+  Scenario: Display error messages for empty required fields
+    Given I am on the registration page
+    When I leave all required fields empty
+    And I click the register button
+    Then I should see error messages for all required fields
